@@ -1,0 +1,24 @@
+import { ChannelContext, UserContext } from "./Main";
+
+const ComponentF = () => {
+  return (
+    <div>
+      <UserContext.Consumer>
+        {(user) => {
+          return (
+            <ChannelContext.Consumer>
+              {(channel) => {
+                return (
+                  <div>
+                    User COntext Value {user}, channel context value {channel}
+                  </div>
+                );
+              }}
+            </ChannelContext.Consumer>
+          );
+        }}
+      </UserContext.Consumer>
+    </div>
+  );
+};
+export default ComponentF;
